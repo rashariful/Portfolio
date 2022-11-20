@@ -2,6 +2,7 @@ import React from "react";
 import Pic from '../../../assets/heros.jpg'
 import Portfolio from "../Portfolio/Portfolio";
 import WhatDo from "./WhatDo/WhatDo";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   return (
@@ -14,8 +15,24 @@ const Home = () => {
 
           <div className="w-1/2">
             <h3 className="capitalize text-lg">
-              <span className="uppercase">mern</span> stack developer
+              <span style={{ color: "", fontWeight: "semibold" }}>
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                  words={[
+                    "MERN stack Developer",
+                    "UI/UX Designer",
+                    "Front-End Developer",
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
             </h3>
+
             <h1 className="text-[#f5f5f5] my-4 text-5xl font-bold capitalize">
               md shariful islam
             </h1>
