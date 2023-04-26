@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../../assets/logo.png"
 
 const Header = () => {
   const menuItems = (
     <React.Fragment>
       <li>
-        <Link to='/'>About me</Link>
+        <Link to='/about'>About me</Link>
       </li>
       <li>
         <Link to='/resume'>Resume</Link>
@@ -13,12 +14,7 @@ const Header = () => {
       <li>
         <Link to='/portfolio'>Portfolio</Link>
       </li>
-      <li>
-        <Link to='/'>Contact</Link>
-      </li>
-      <li>
-        <Link to='/'>Extra</Link>
-      </li>
+      
    
     </React.Fragment>
     
@@ -52,7 +48,8 @@ const Header = () => {
 
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost normal-case text-xl">Rashariful</Link>
+        {/* <img src={Logo} className="w-20 h-auto bg-white rounded-md" alt="" /> */}
+        <Link to='/' className="btn btn-ghost normal-case text-xl">Md Shariful Islam</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">

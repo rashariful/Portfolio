@@ -33,6 +33,7 @@ export default function Portfolio() {
   return (
     <div className="w-full  px-2 py-16 sm:px-0">
       <Tab.Group>
+
         <Tab.List className="flex w-1/2 mx-auto rounded-xl bg-blue-900/20 p-1">
           {Object.keys(categories).map((category) => (
             <Tab
@@ -42,7 +43,7 @@ export default function Portfolio() {
                   "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
                   "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-1",
                   selected
-                    ? "bg-primary shadow text-white"
+                    ? "bg-primary shadow text-gray-100"
                     : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                 )
               }
@@ -50,9 +51,13 @@ export default function Portfolio() {
               {category}
             </Tab>
           ))}
+
         </Tab.List>
+
         <Tab.Panels className="mt-2">
+
           {Object.values(categories).map((posts, idx) => (
+
             <Tab.Panel
               key={idx}
               className={classNames(
@@ -70,19 +75,14 @@ export default function Portfolio() {
                       {post.title}
                     </h3>
 
-                    <a
-                      href="#"
-                      className={classNames(
-                        "absolute inset-0 rounded-md",
-                        "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
-                      )}
-                    />
                   </li>
                 ))}
               </ul>
             </Tab.Panel>
           ))}
+
         </Tab.Panels>
+
       </Tab.Group>
     </div>
   );

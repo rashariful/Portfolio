@@ -1,7 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Resume = () => {
+  const products = useLoaderData();
+  console.log(products);
+
   return (
     <div>
       <section className="w-1/2 mx-auto">

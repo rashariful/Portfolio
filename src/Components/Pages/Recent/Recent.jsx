@@ -1,6 +1,16 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Recent = () => {
+  // const [projects, setProjects] = useState([])
+  // console.log(projects + "project files here");
+  // useEffect(()=>{
+  //   fetch("http://localhost:5000/api/project")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data.data));
+  // },[])
   return (
     <div>
       <div className="py-6 sm:py-8 lg:py-12">
@@ -10,85 +20,48 @@ const Recent = () => {
               <h2 className=" text-2xl lg:text-3xl font-bold">Recent</h2>
 
               <p className="max-w-screen-sm hidden md:block">
-                This is a section of some simple filler text, also known as
-                placeholder text. It shares some characteristics of a real
-                written text.
+                I recently completed those web application with react.js, you
+                can see the live side and also you can visit my github profile
+                with source code.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
-            <a
-              href="#"
-              className="group h-48 md:h-80 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Minh Pham"
-                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
-              />
+            {/* {projects?.map((project) =>  (
+              
+              <a
+                href="https://used-car-museum.web.app/"
+                className="group h-48 md:h-80 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
+              >
+                <img
+                  src={project.img}
+                  loading="lazy"
+                  alt="web information"
+                  className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
+                />
 
-              <div className="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+                <div className="bg-gradient-to-t from-blue-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
 
-              <span className="inline-block text-white text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
-                VR
-              </span>
-            </a>
+                <div className="flex gap-5 text-white text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
+                  <a href="https://used-car-museum.web.app/">
+                    <button className="btn btn-sm btn-primary">
+                      Live side
+                    </button>
+                  </a>
+                  <a href="https://used-car-museum.web.app/">
+                    <button className="btn btn-sm btn-warning">
+                      Source code
+                    </button>
+                  </a>
+                  <Link to={`/project-details/${project.id}`}>
+                    details
+                  </Link>
+                </div>
 
-            <a
-              href="#"
-              className="group h-48 md:h-80 md:col-span-2 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000"
-                loading="lazy"
-                alt="Photo by Magicle"
-                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
-              />
+              </a>
+            ))} */}
 
-              <div className="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
-
-              <span className="inline-block text-white text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
-                Tech
-              </span>
-            </a>
-
-            <a
-              href="#"
-              className="group h-48 md:h-80 md:col-span-2 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=1000"
-                loading="lazy"
-                alt="Photo by Martin Sanchez"
-                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
-              />
-
-              <div className="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
-
-              <span className="inline-block text-white text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
-                Dev
-              </span>
-            </a>
-
-            <a
-              href="#"
-              className="group h-48 md:h-80 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Lorenzo Herrera"
-                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
-              />
-
-              <div className="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
-
-              <span className="inline-block text-white text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
-                Retro
-              </span>
-            </a>
           </div>
         </div>
       </div>
