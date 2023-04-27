@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
 
         <div className="text-gray-400 text-sm text-center py-8">
-          © 2021 - Present Md Shariful Islam. All rights reserved.
+          © 2023 - Present Md Shariful Islam. All rights reserved.
         </div>
       </footer>
     </div>
