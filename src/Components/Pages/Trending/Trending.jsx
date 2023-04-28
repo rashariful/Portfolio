@@ -16,8 +16,10 @@ const Trending = () => {
                 <h2 className=" text-2xl lg:text-3xl font-bold">Trending</h2>
               </div>
             </div>
+            
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
+            <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              
               <a
                 href="https://used-car-museum.web.app/"
                 className="group h-48 md:h-80 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
@@ -71,6 +73,7 @@ const Trending = () => {
                   </a>
                 </div>
               </a>
+
               <a
                 href="https://used-car-museum.web.app/"
                 className="group h-48 md:h-80 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"

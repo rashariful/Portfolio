@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 const ProjectDetails = () => {
     const project = useLoaderData()
-    console.log(project);
+    console.log(project.data.title,project.data.description);
     // const [projects, setProjects] = useState([])
     // useEffect(()=>{
     //     fetch('projects.json')
@@ -14,13 +21,45 @@ const ProjectDetails = () => {
 
     return (
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto flex flex-col">
+         <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        
+       {
+        project?.data?.images?.map(img => (
+          <SwiperSlide>
+          <img
+          className="w-[1020px] h-[600px]"
+          src={img}
+          alt=""
+        />
+         </SwiperSlide>
+        ))
+       }
+       
+       
+      </Swiper>
+
+
+        {/* swiper end here */}
+        {/* <div className="container px-5 py-24 mx-auto flex flex-col">
           <div className="lg:w-4/6 mx-auto">
             <div className="rounded-lg h-full overflow-hidden">
               <img
                 alt="content"
                 className="object-cover object-center h-full w-full"
-                // src={shows?.image?.original}
+                src={project?.data?.thumbnail}
               />
             </div>
 
@@ -30,10 +69,10 @@ const ProjectDetails = () => {
                   <div className="flex flex-col justify-center w-full px-4 md:px-8 mx-auto">
                     <div className="mb-2 md:mb-3">
                       <h2 className="text-gray-100 text-2xl lg:text-3xl">
-                        {/* <span> Movie Name:</span> <span>{shows?.name}</span> */}
+                        
                       </h2>
                       <span className="inline-block text-gray-500 mt-0.5">
-                        {/* {shows?.language} */}
+                      
                       </span>
                     </div>
                     <div className="flex items-center mb-6 md:mb-10">
@@ -96,7 +135,7 @@ const ProjectDetails = () => {
                     <div className="mb-4">
                       <div className="flex items-end gap-2">
                         <span className="text-gray-100 text-xl md:text-2xl font-bold">
-                          {/* Price: ${shows?.averageRuntime} */}
+                          
                         </span>
                         <span className="text-red-500 line-through mb-0.5">
                           $90.00
@@ -119,7 +158,7 @@ const ProjectDetails = () => {
                 </p>
 
                 <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
-                  {/* {shows.summary} */}
+                  
                   <br />
                   <br />
                   This is a section of some simple filler text, also known as
@@ -132,7 +171,7 @@ const ProjectDetails = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     );
 };

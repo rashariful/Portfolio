@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         path: "/project-details/:id",
         element: <ProjectDetails></ProjectDetails>,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/api/project/${params?.id}`);
+          return fetch(`http://localhost:5000/api/v1/project/${params?.id}`);
         },
       },
     ],
