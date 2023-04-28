@@ -5,9 +5,9 @@ const Popular = () => {
   const [projects, setProjects] = useState([]);
   console.log(projects);
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/project")
+    fetch(`${process.env.REACT_APP_ROOT}api/v1/project`)
       .then((res) => res.json())
-      .then((data) => setProjects(data.data));
+      // .then((data) => setProjects(data.data));
   }, []);
   return (
     <div>
