@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Recent = () => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_ROOT}api/v1/project`)
+    fetch(`${process.env.REACT_APP_ROOT}/api/v1/project`)
       .then((res) => res.json())
       .then((data) => setProjects(data.data));
   }, []);
@@ -32,7 +32,7 @@ const Recent = () => {
             <>
               {projects?.map((project) => (
                 <>
-                  <div className="card  bg-base-100 shadow-xl border border-cyan-500">
+                  <div className="card  bg-base-100 shadow-xl border border-gray-700 hover:border-cyan-500 transition-all duration-300">
                     <Link to={`/project-details/${project._id}`}>
                       <figure className="px-10 pt-10 transition duration-300 hover:scale-110 ">
                         <img

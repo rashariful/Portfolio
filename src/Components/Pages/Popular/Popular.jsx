@@ -5,7 +5,7 @@ const Popular = () => {
   const [projects, setProjects] = useState([]);
   console.log(projects);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_ROOT}api/v1/project`)
+    fetch(`${process.env.REACT_APP_ROOT}/api/v1/project`)
       .then((res) => res.json())
       .then((data) => setProjects(data.data));
   }, []);
@@ -29,7 +29,7 @@ const Popular = () => {
             <>
               {projects?.map((project) => (
                 <>
-                  <div className="card  bg-base-100 shadow-xl border border-cyan-500">
+                  <div className="card  bg-base-100 shadow-xl border border-gray-700 hover:border-cyan-500 transition-all duration-300">
                     <Link to={`/project-details/${project._id}`}>
                       <figure className="px-10 pt-10 transition duration-300 hover:scale-110 ">
                         <img
@@ -40,7 +40,7 @@ const Popular = () => {
                       </figure>
                     </Link>
                     <div className="card-body items-center text-center">
-                      <h2 className="card-title">{project.title}</h2>
+                      <h2 className="card-title capitalize">{project.title}</h2>
                       <p>{project.description}</p>
                       <div className="card-actions">
                         <div className="flex gap-5 text-white pt-8 text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
