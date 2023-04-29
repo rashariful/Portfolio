@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Recent = () => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_ROOT}/api/v1/project`)
+    fetch(`${process.env.REACT_APP_ROOT}api/v1/project`)
       .then((res) => res.json())
       .then((data) => setProjects(data.data));
   }, []);
