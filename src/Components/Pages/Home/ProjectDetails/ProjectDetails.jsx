@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { SiExpress, SiFirebase, SiTailwindcss } from "react-icons/si";
-import { DiCss3, DiHtml5, DiJavascript, DiMongodb, DiNodejs, DiReact } from "react-icons/di";
+import {
+  DiCss3,
+  DiHtml5,
+  DiJavascript,
+  DiMongodb,
+  DiNodejs,
+  DiReact,
+} from "react-icons/di";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -10,17 +17,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { FaChevronRight, FaGithub } from "react-icons/fa";
 
 const ProjectDetails = () => {
   const project = useLoaderData();
-  console.log(project.data);
-  const {images} = project.data
-  console.log(images , 'linke 18')
-  const [img, setImg] = useState(images[2])
+  const { images } = project.data;
+  console.log(images, "linke 18");
+  const [img, setImg] = useState(images[2]);
 
-  const handleImageHover = (image)=>{
-    setImg(image)
-  }
+  const handleImageHover = (image) => {
+    setImg(image);
+  };
 
   return (
     <section className="text-gray-600 body-font">
@@ -56,28 +63,20 @@ const ProjectDetails = () => {
             />
           </div>
 
-        
-                
-                  <div className="rounded-lg flex justify-center mb-24 mt-5 pb-3 drop-shadow-sm shadow-cyan-500 shadow-sm overflow-hidden">
-                    {images?.map((image, i) => (
-                      <div
-                      onClick={()=> handleImageHover(image,i)}
-                      >
-                        <img
-                          src={image}
-                          loading="lazy"
-                          alt="by Himanshu Dewangan"
-                          className="w-40 h-32 m-3 rounded-md object-cover object-center"
-                        />
-                      </div>
-                    ))}
-                  </div>
-               
-      
+          <div className="rounded-lg flex justify-center mb-24 mt-5 pb-3 drop-shadow-sm shadow-cyan-500 shadow-sm overflow-hidden">
+            {images?.map((image, i) => (
+              <div onClick={() => handleImageHover(image, i)}>
+                <img
+                  src={image}
+                  loading="lazy"
+                  alt="by Himanshu Dewangan"
+                  className="w-40 h-32 m-3 rounded-md object-cover object-center"
+                />
+              </div>
+            ))}
+          </div>
 
-
-
-        {/* end of image sliider */}
+          {/* end of image sliider */}
           <div className="bg-slate-800 py-6 rounded-b-md sm:py-8 lg:py-12">
             <div className="max-w-screen-md px-4 md:px-8 mx-auto">
               <div className=" py-6 sm:py-8 lg:py-12">
@@ -86,13 +85,10 @@ const ProjectDetails = () => {
                     <h2 className="text-gray-100 capitalize text-2xl lg:text-3xl">
                       {project.data.title}
                     </h2>
-                    <span className="inline-block text-gray-500 mt-0.5">
-                      {project.data.title}
-                    </span>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-between sm:flex-row">
+              <div className="flex flex-col justify-between sm:flex-row gap-6">
                 <div className="bg-base-100 p-10 rounded-md">
                   <h1 className="flex justify-center capitalize text-blue-100">
                     Frontend development
@@ -188,20 +184,35 @@ const ProjectDetails = () => {
                   </div>
                 </div>
               </div>
-              <p className="font-semibold text-2xl text-gray-300 my-3">
+              <p className="font-semibold text-2xl text-gray-300 my-3 mt-16">
                 Description
               </p>
 
               <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
                 <br />
-                <br />
-                This is a section of some simple filler text, also known as
-                placeholder text. It shares some characteristics of a real
-                written text but is or otherwise generated. It may be used to
-                display a sample of fonts or generate text for testing. Filler
-                text is dummy text which has no meaning however looks very
-                similar to real text.
+                {project.data.description}
               </p>
+
+              <div className="flex flex-col md:flex-row justify-center gap-5 text-white pt-8 text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
+                <a href={project?.data?.liveLink}>
+                  <button className="btn btn-sm btn-primary">
+                    Live Demo
+                    <FaChevronRight className="w-5 h-5 ml-3"></FaChevronRight>
+                  </button>
+                </a>
+                <a href={project?.data?.serverLink}>
+                  <button className="btn btn-outline btn-sm">
+                    <FaGithub className="w-5 h-5 mr-3"></FaGithub>
+                    server side
+                  </button>
+                </a>
+                <a href={project?.data?.clientLink}>
+                  <button className="btn btn-outline btn-sm">
+                    <FaGithub className="w-5 h-5 mr-3"></FaGithub>
+                    client side
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>

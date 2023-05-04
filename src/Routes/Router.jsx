@@ -36,11 +36,13 @@ const router = createBrowserRouter([
         path: "/project-details/:id",
         element: <ProjectDetails></ProjectDetails>,
         loader: async ({ params }) => {
-          return fetch(`${process.env.REACT_APP_ROOT}api/v1/project/${params?.id}`);
+          return fetch(
+            `${process.env.REACT_APP_ROOT}/api/v1/project/${params?.id}`
+          );
         },
       },
     ],
   },
 ]);
 
-export default router
+export default router;
