@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         element: <ProjectDetails></ProjectDetails>,
         loader: async ({ params }) => {
           return fetch(
-            `${process.env.REACT_APP_ROOT}/api/v1/project/${params?.id}`
+            `${process.env.REACT_APP_ROOT}api/v1/project/${params?.id}`
           );
         },
       },
