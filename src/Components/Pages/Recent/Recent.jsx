@@ -44,7 +44,7 @@ const Recent = () => {
                     </Link>
                     <div className="card-body items-center text-center">
                       <h2 className="card-title capitalize">{project.title}</h2>
-                      <p className="" >{project.description}</p>
+                      <p className="" >{project.shortDscrp}</p>
                       <div className="card-actions">
                         <div className="flex flex-col md:flex-row gap-5 text-white pt-8 text-sm md:text-lg relative ml-4 md:ml-5 mb-3">
                           <a href={project.liveLink}>
